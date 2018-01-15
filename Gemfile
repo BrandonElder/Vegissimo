@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'foundation-rails'
 gem 'jquery-rails'
 gem 'figaro'
 gem 'rubocop', '~> 0.52.1', require: false
