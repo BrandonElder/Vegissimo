@@ -1,3 +1,37 @@
-<h1>Hello World!</h1>
+<div>
+  <%= form_tag(search_path, :method=>'post') do %>
+    <div>
+     Search Term:<br />
+     <%= text_field_tag "q",
+       QueryResult.return_query_term,
+       maxlength: 20,
+       placeholder: 'Search',
+       required: true
+     %>
+    </div>
+    <div>
+      Number of Results:
+      <br />
+      <%= number_field_tag "limit", 1, min:1, max:10, required: true %>
+    </div>
+     <div>
+       Vegan <%= radio_button_tag(:health, "vegan", true) %>
+       <br />
+       Vegetarian <%= radio_button_tag(:health, "vegetarian") %>
+       <br />
+     </div>
+        <div>
+          Maximum Calories Per Serving:
+          <br/>
+          <%= number_field_tag "max_cal", min:1, required: true %>
+        </div>
+     <div>
+       <%= submit_tag 'Submit' %>
+     </div>
+  <% end %>
+</div>
 
-<%= @stack_exchange.questions %>
+
+<% if @recipes %>
+    <%= @recipes %>
+<% end %>

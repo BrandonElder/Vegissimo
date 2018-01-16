@@ -1,0 +1,37 @@
+inherit_from: .rubocop_todo.yml
+AllCops:
+  Include:
+    - Rakefile
+    - config.ru
+    - lib/**/*.rake
+  Exclude:
+    - app/controllers/pieces_controller.rb
+    - config/environments/production.rb
+    - config/initializers/*
+    - db/schema.rb
+    - db/migrate/*
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 85
+
+Metrics/BlockLength:
+    Max: 100
+
+Metrics/MethodLength:
+    Max: 20
+
+Metrics/AbcSize:
+    Max: 20
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FileName:
+  Exclude:
+    - Gemfile

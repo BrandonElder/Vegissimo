@@ -1,8 +1,20 @@
 class StaticPagesController < ApplicationController
-  require "stack_exchange"
-    
+  require 'tasks/get_recipes'
+  require 'tasks/query_result'
+
   def index
-    @stack_exchange = StackExchange.new("stackoverflow", 1)
+    return flash.now[:notice] = 'error' if QueryResult.query_error?
+    # return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
+
+    @recipes = QueryResult.return_query_result
   end
-    
+
+  def search
+    new_recipes = GetRecipes.new(params[:q],
+                                 params[:limit],
+                                 params[:max_cal],
+                                 params[:health])
+    QueryResult.store_query_result(new_recipes.search, params[:q])
+    redirect_to root_path
+  end
 end
