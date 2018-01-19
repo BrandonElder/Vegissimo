@@ -1,5 +1,11 @@
 class RecipesController < ApplicationController
   require 'tasks/recipe_errors'
+  before_action :authenticate_user!, only: %i[create destroy]
+
+  def index
+    recipes = Recipe.all
+    render json: recipes
+  end
 
   def show
     recipe = if params[:name]
@@ -20,7 +26,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(name: params[:name], edamam_id: params[:id])
-    redirect_to recipe_path(@recipe.id)
+    redirect_to root_path
   end
 
   def destroy
