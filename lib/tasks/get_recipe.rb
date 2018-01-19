@@ -1,27 +1,21 @@
 require 'httparty'
-include QueriesHelper
-
-class GetRecipes
+class GetRecipe
   include HTTParty
   base_uri 'https://api.edamam.com'
   format :json
 
-  def initialize(q, limit, max_cal, health)
+  def initialize(edamam_id)
     @options = {
       query: {
-        q: q,
+        r: 'http://www.edamam.com/ontologies/edamam.owl#recipe_' + edamam_id.to_s,
         app_id: ENV['app_id'],
-        app_key: ENV['app_key'],
-        from: 0,
-        to: limit,
-        calories: 'gte 1, lte ' + max_cal,
-        health: health
+        app_key: ENV['app_key']
       }
     }
   end
 
-  def search
-    query = self.class.get('/search', @options)
-    query.success? ? query : query.code
+  def find_recipe
+    getter = self.class.get('/search', @options)
+    getter.success? ? getter : getter.code
   end
 end

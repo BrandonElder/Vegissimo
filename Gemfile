@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
 gem 'httparty'
 gem 'foundation-rails'
-gem 'jquery-rails'
 gem 'figaro'
+gem 'jquery-rails'
 gem 'rubocop', '~> 0.52.1', require: false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
