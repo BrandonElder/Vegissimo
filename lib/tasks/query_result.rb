@@ -12,7 +12,7 @@ module QueryResult
 
   def self.query_error?
     return if @query_result.nil?
-    @query_result == 403 ? true : false
+    @query_result == 403
   end
 
   def self.no_recipe_found?
@@ -23,4 +23,10 @@ module QueryResult
   def self.hits
     @query_result['hits'] if @query_result
   end
+
+  def self.api_limit?
+    return if @query_result.nil?
+    @query_result == 401
+  end
+  
 end
