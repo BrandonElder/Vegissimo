@@ -1,17 +1,19 @@
 class RecipesController < ApplicationController
   require 'tasks/recipe_errors'
-  before_action :authenticate_user!, only: %i[create destroy]
+  before_action :authenticate_user!, only: %i[create show destroy]
 
   def index
-    recipes = Recipe.all
+    recipes = current_user.recipes.all
     render json: recipes
   end
 
   def show
-    recipe = if params[:name]
-               Recipe.new(name: params[:name], edamam_id: params[:id])
+    recipe = if params[:recipe_name]
+               current_user.recipes.new(name: params[:recipe_name],
+                                        edamam_id: params[:id],
+                                        dislike: params[:dislike])
              else
-               Recipe.find_by_id(params[:id])
+               current_user.recipes.find_by_id(params[:id])
              end
 
     if recipe
@@ -20,25 +22,26 @@ class RecipesController < ApplicationController
     else
       # can redirect back to user dashboard once implemented for favorites,
       # user dashboard for saved recipes
-      redirect_to action: 'show', id: 1, status: :not_found
+      redirect_to dashboard_path, status: :not_found
     end
   end
 
   def create
-    @recipe = Recipe.create(name: params[:name], edamam_id: params[:id])
-    redirect_to root_path
+    current_user.recipes.create(name: params[:recipe_name],
+                                edamam_id: params[:id],
+                                dislike: params[:dislike])
   end
 
   def destroy
-    @recipe = Recipe.find_by(edamam_id: params[:id])
-    @recipe.delete
-    redirect_to root_path
+    @recipe = current_user.recipes.find_by(id: params[:id])
+    @recipe.destroy
+    redirect_to dashboard_path
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :edamam_id)
+    params.require(:recipe).permit(:name, :edamam_id, :dislike)
   end
   
 end
