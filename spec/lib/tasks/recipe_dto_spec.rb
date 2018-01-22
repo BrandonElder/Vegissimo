@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'tasks/recipe_dto'
-file = File.read('spec/spicy_eggplant.json')
+file = File.read('spec/example2.json')
 data_hash = JSON.parse(file)[0]
 
 RSpec.describe RecipeDto do
