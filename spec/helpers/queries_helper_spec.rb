@@ -1,7 +1,7 @@
 require 'rails_helper'
 require 'tasks/query_result'
 require 'tasks/recipe_dto'
-file = File.read('spec/data.json')
+file = File.read('spec/example1.json')
 data_hash = JSON.parse(file)
 
 RSpec.describe QueriesHelper, type: :helper do

@@ -1,5 +1,4 @@
 class QueriesController < ApplicationController
-  # require 'queries_helper'
   require 'tasks/get_recipes'
   require 'tasks/query_result'
   require 'tasks/recipe_errors'
@@ -9,19 +8,30 @@ class QueriesController < ApplicationController
     QueryResult.api_limit? || RecipeErrors.api_limit?
     return flash.now[:notice] = 'error' if QueryResult.query_error?
     return flash.now[:notice] = 'no recipe found' if QueryResult.no_recipe_found?
-
-    @recipes = QueryResult.hits
+    @recipes = if signed_in?
+                 QueryResult.filter_hits(current_user.disliked_recipes, QueryResult.hits)
+               else
+                 QueryResult.hits
+               end
   end
 
   def search
-    new_recipes = GetRecipes.new(params[:q],
-                                 params[:limit],
-                                 params[:max_cal],
-                                 params[:health])
-    QueryResult.store_query_result(new_recipes.search,
-                                   params[:q],
-                                   params[:limit],
-                                   params[:max_cal])
+    new_recipes = first_call
+    store(new_recipes.search)
     redirect_to root_path
   end
+end
+
+private
+
+def first_call
+  GetRecipes.new(params[:q],
+                 params[:max_cal],
+                 params[:health])
+end
+
+def store(recipe_search)
+  QueryResult.store_query_result(recipe_search,
+                                 params[:q],
+                                 params[:max_cal])
 end
