@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'chart-js-rails'
 gem 'will_paginate', '~> 3.1.1'
 gem 'httparty'
 gem 'foundation-rails'
