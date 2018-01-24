@@ -9,8 +9,16 @@
 <br /><br />
 Servings: <%= @recipe.yield %>
 <br />
-Calories per Serving: <%= (@recipe.calories/@recipe.yield).round(1) %>
-<br /><br />
+<br />
+
+NUTRION PER SERVING:<br />
+Calories: <%= (@recipe.calories/@recipe.yield).round %><br />
+Fat: <%= (@recipe.fat/@recipe.yield).round %><br />
+Carbohydrates: <%= (@recipe.carbs/@recipe.yield).round %><br />
+Protein: <%= (@recipe.protein/@recipe.yield).round %>
+<br />
+<br />
+
 Ingredients:
 <% @recipe.ingredient_list.each do |ingredient| %>
   <br />
@@ -18,3 +26,11 @@ Ingredients:
 <% end %>
 <br /><br />
 <%= link_to 'Make Recipe', @recipe.url, target: '_blank', class: 'button', method: :get %>
+<br />
+
+<div id="chart" data-fat-cals="<%= RecipesHelper.percent_cals_from_fat(@recipe) %>"
+  data-protein-cals="<%= RecipesHelper.percent_cals_from_protein(@recipe) %>"
+  data-carbs-cals="<%= RecipesHelper.percent_cals_from_carbs(@recipe) %>">
+  <canvas id="macrosChart" ></canvas>
+  <p id="caption"> * percentages are approximate. </p>
+</div>
