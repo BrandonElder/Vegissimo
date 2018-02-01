@@ -10,10 +10,18 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_self
- *= require foundation_and_overrides
-
- *= require_tree .
  */
+ 
+ @import "foundation_and_overrides";
+ @import "master";
+ @import "cards";
+ @import "buttons";
+ @import "queries";
+ @import "dashboards";
+ @import "forms";
+ @import "recipes";
+ @import "static_pages";
+ @import "home_page";
+ @import "navbar";
  
  
