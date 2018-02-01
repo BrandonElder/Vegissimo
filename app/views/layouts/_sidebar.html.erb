@@ -1,0 +1,30 @@
+<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+  <!-- Close button -->
+  <button class="close-button" aria-label="Close menu" type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <!-- Menu -->
+  <ul class="vertical menu">
+    <li>
+      <%= link_to 'Home', root_path %>
+    </li>
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to 'Dashboard', dashboard_path(search_id: params[:search_id]) %>
+      </li>
+      <li>
+        <%= link_to 'Sign out', destroy_user_session_path(search_id: params[:search_id]), method: :delete %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to 'Sign in', new_user_session_path(search_id: params[:search_id]) %>
+      </li>
+      <li>
+        <%= link_to 'Sign up', new_user_registration_path(search_id: params[:search_id]) %>
+      </li>
+    <% end %>
+  </ul>
+  <!-- Search Filters -->
+  
+  
+</div>

@@ -11,11 +11,15 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require foundation
-//= require jquery
-//= require jquery_ujs
-//= require Chart.min
 //= require turbolinks
+//= require jquery3
+//= require jquery_ujs
+//= require foundation
+//= require Chart.min
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+document.addEventListener("turbolinks:load", function() {
+  jQuery(function(){
+    $(document).foundation();
+  });
+});
