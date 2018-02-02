@@ -1,79 +1,37 @@
-.alert-callout-subtle {
-  background: #e6e6e6;
-  color: #8a8a8a;
-  border: 0;
-  border: 1px solid rgba(10, 10, 10, 0.25);
-  border-left: 0.3125rem solid #8a8a8a;
-  font-size: 0.9rem;
-}
-
-.alert-callout-subtle .close-button {
-  font-size: 0.7em;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-.alert-callout-subtle.fav {
-  background: white;
-  color: #8a8a8a;
-  border-left: 0.3125rem solid #2CC3A1;
-}
-
-.alert-callout-subtle.notfav {
-  background: white;
-  color: #8a8a8a;
-  border-left: 0.3125rem solid #FFA274;
-}
-
-.alert-callout-subtle.radius {
-  border-radius: 0.6rem;
-}
-
-.callout-link{
+.callout-link {
   max-width: 275px;
   display: flex;
   align-items: center;
   min-height: 90px;
 }
 
-.callout-link a{
+.callout-link a {
   align-self: center;
   margin-left: -15px;
 }
 
-.close-button{
-    background-color: transparent;
-    text-decoration: none;
-    color: #FFA274;
-    transition: all ease 0.4s;
-    margin: 0;
-    font-size: 1.5rem;
+.dash.callout {
+    margin: 20px;
 }
 
-.close-button:hover{
-  color: #cc815c;
+.dash-close-button {
+  color: black;
+  
+  &:hover {
+    color: #989797;
+  }
 }
 
-.dashboard-container{
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+/* TABS */
+
+.tabs {
+  text-align: center;
+  padding: 20px;
 }
 
-.dashboard-container .callout {
-  margin: 10px;
-  flex: 1 375px;
-  max-width: 350px;
-  min-width: 250px;
-  color: gray;
-  padding: 0px;
-}
-
-.tabs-content a:hover{
-  font-weight: 600;
+.tabs-title {
+  display: inline-block;
+  float: none;
 }
 
 .tabs-title > a {
@@ -98,8 +56,26 @@
   outline: none;
 }
 
+.tabs-panel {
+  display: none;
+  padding: 1rem;
+  margin-top: 14px;
+  border-top: 1px solid #e6e6e6;
+}
+
 .dashboard-image {
-  // width: 100px;
   padding: 0;
   margin: 0;
+}
+
+/* MANAGE ACCOUNT */
+
+.dash-info {
+  text-align: right;
+  color: #8a8a8a;
+  padding: 15px;
+}
+
+.dash-btn a {
+  color: blue;
 }
