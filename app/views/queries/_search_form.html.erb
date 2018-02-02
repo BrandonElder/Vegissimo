@@ -37,7 +37,7 @@
                         class="cal-btn"
                         data-quantity="minus"
                         data-field="max_cal">
-                  <i class="fa fa-minus" aria-hidden="true"></i>
+                  <i class="fa fas fa-caret-left" aria-hidden="true"></i>
                 </button>
               </div>
               <%= number_field_tag "max_cal",
@@ -50,7 +50,7 @@
                         class="cal-btn"
                         data-quantity="plus"
                         data-field="max_cal">
-                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <i class="fa fas fa-caret-right" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
@@ -61,7 +61,7 @@
       <!-- Filter Box End -->
       <!-- Search Bar Begin -->
       <div class="search-field">
-        <div class="row ">
+        <div class="row">
           <div class="small-8 columns">
             <%= text_field_tag "q",
               @term,
