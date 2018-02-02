@@ -5,11 +5,7 @@ Rails.application.routes.draw do
   get 'queries', to: 'queries#home'
   get :limbo, controller: 'queries'
   post :search, controller: 'queries'
-  resources :users do
-    resources :recipes, only: %i[index create destroy]
-    member do
-      get '(/:recipe_name)', to: 'recipes#show', as: 'recipe_name'
-    end
-  end
+  resources :users
+  resources :recipes, only: %i[show create destroy]
   resource :dashboard, only: [:show]
 end
