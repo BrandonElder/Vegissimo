@@ -1,13 +1,13 @@
 .hero-section {
   position: relative;
-  height: 80vh;
+  height: 85vh;
   margin-top: -16px;
   width: 100%;
 }
 
 .hero {
   display: flex;
-  background: image_url('hero1.jpg') no-repeat center center fixed;
+  background: image_url('hero13.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -16,16 +16,16 @@
   z-index: 1;
   width: 100%;
 
-    // &:before {
-    //   content: '';
-    //   position: absolute;
-    //   top: 0;
-    //   right: 0;
-    //   bottom: 0;
-    //   left: 0;
-    //   background-image: linear-gradient(to top,#937d1a,#ffffff);
-    //   opacity: .18;
-    // }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to top, black, white);
+    opacity: .45;
+  }
 }
 
 .hero-column {
@@ -34,17 +34,24 @@
   align-items: center;
   justify-content: center;
   z-index: 2;
+  margin-bottom: 40px;
 }
 
 #searchFilters {
   display: none;
-  border: 1px solid #cacdca;
-  padding: 10px;
+  background: lavender;
+  opacity: 0.7;
+  padding: 20px;
   margin-bottom: 20px;
+  border-radius: 0.2rem;
+  
+  @media only screen and (max-width: 400px) {
+    opacity: 0.85;
+  }
 }
 
 .chev-filter {
-  color: #ffffff;
+  color: black;
   margin-bottom: 18px;
 }
 
@@ -54,20 +61,16 @@
 
 .search-title {
   margin-bottom: 0;
+  
+  @media only screen and (max-width: 400px) {
+    font-size: 34px;
+  }
 }
 
 .search-box {
   text-align: center;
-  padding-bottom: 60px;
-}
-
-.search-box .search-field {
-  border-color: #cacdca;
-}
-
-.search-box .search-title {
-  font-weight: 700;
-  color: white;
+  border: 1px solid black;
+  padding: 40px;
 }
 
 .search-box .text-input {
@@ -85,7 +88,13 @@
 .search-box .radio-label,
 .search-box .input-group-button .cal-btn
 {
-  color: white;
+  color: black;
+}
+
+.search-box-field {
+  border: 1px white solid;
+  border-radius: 3rem;
+  margin-bottom: 30px;
 }
 
 [type='radio'] + label {
