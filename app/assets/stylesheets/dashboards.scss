@@ -22,6 +22,11 @@
   }
 }
 
+.row.btn-row {
+  justify-content: left;
+  margin-left: 1px;
+}
+
 /* TABS */
 
 .tabs {
@@ -56,11 +61,21 @@
   outline: none;
 }
 
+.tabs-content {
+  @media only screen and (max-width: 400px) {
+    border: none;
+  }
+}
+
 .tabs-panel {
   display: none;
   padding: 1rem;
   margin-top: 14px;
   border-top: 1px solid #e6e6e6;
+  
+  @media only screen and (max-width: 400px) {
+    border: none;
+  }
 }
 
 .dashboard-image {

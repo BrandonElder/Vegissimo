@@ -4,6 +4,76 @@
   position: relative;
 }
 
+button:focus {
+  outline:0;
+}
+
+.side-close-button {
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+  transition: all ease 0.4s;
+  margin: 0;
+  font-size: 1.5rem;
+  float: right;
+  padding: 10px 20px;
+  
+  &:hover {
+    color: #989797;
+  }
+}
+
+.round-btn {
+  display: inline-block;
+  border: 2px solid;
+  border-radius: 3rem;
+  padding: 0.5rem;
+  transition: all ease 0.4s;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.clean-btn {
+  background-color: transparent;
+  border-color: #8a8a8a;
+  border-radius: 3rem;
+  color: #8a8a8a;
+}
+
+.favorite-btn {
+  background-color: #fb4a4a;
+  border-color: #fb4a4a;
+  color: #fefefe;
+  
+  &:hover {
+    background-color: white;
+    border-color: #fb4a4a;
+  }
+}
+
+.favorite-btn:hover .fa {
+  color: #fb4a4a;
+}
+
+.dislike-btn {
+  background-color: #4fad9f;
+  border-color: #4fad9f;
+  color: #fefefe;
+  
+  &:hover {
+    border-color: #4fad9f;
+    background-color: white;
+  }
+}
+
+.dislike.btn:hover .fa {
+  color: #4fad9f;
+}
+
+
+/* Review these styles and discard anything not needed */
+
+
 .button {
   border: 2px solid #8a8a8a;
   background-color: transparent;
@@ -18,14 +88,16 @@
   transition: all ease 0.4s;
   margin: 0px;
   z-index: 3;
-}
-
-button:focus {
-  outline:0;
-}
-
-.button:focus {
-  background-color: transparent;
+  
+  &:focus {
+    background-color: transparent;
+  }
+  
+  &:hover {
+    border-color: #4fad9f;
+    color: #4fad9f;
+    background-color: transparent;
+  }
 }
 
 .button span {
@@ -35,42 +107,6 @@ button:focus {
 .button .fa,
 .button span {
   transition: all ease 0.4s;
-}
-
-.button:hover {
-  border-color: #4fad9f;
-  color: #4fad9f;
-  background-color: transparent;
-}
-
-.disliked-btn {
-  background-color: #4fad9f;
-  border-color: #4fad9f;
-  color: #fefefe;
-  
-  &:hover {
-    border-color: #4fad9f;
-    background-color: white;
-  }
-}
-
-.dislike.button:hover .fa {
-  color: #4fad9f;
-}
-
-.faved-btn {
-  background-color: #fb4a4a;
-  border-color: #fb4a4a;
-  color: #fefefe;
-  
-  &:hover {
-    background-color: white;
-    border-color: #fb4a4a;
-  }
-}
-
-.faved-btn.button:hover .fa {
-  color: #fb4a4a;
 }
 
 .hidden-btn {
@@ -134,19 +170,4 @@ button:focus {
 .button:focus .fa,
 .button:focus span   {
   color: #4fad9f;
-}
-
-.side-close-button {
-  background-color: transparent;
-  text-decoration: none;
-  color: white;
-  transition: all ease 0.4s;
-  margin: 0;
-  font-size: 1.5rem;
-  float: right;
-  padding: 10px 20px;
-  
-  &:hover {
-    color: #989797;
-  }
 }

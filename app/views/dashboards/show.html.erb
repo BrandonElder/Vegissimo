@@ -23,8 +23,10 @@
                      data-index='<%= index %>' >
                 <div class="row">
                   <div class="small-12 columns">
-                    <%= image_tag(fav.image, class: 'dashboard-image',
-                                             alt:'Recipe Photo') %>
+                    <%= link_to image_tag(fav.image, class: 'dashboard-image',
+                                             alt:'Recipe Photo'), 
+                                             recipe_path(id: fav.id,
+                                             search_id: params[:search_id]) %>
                   </div>
                   <div class="small-12 columns dash-close">
                     <%= button_to recipe_path(id: fav.id),

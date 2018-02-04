@@ -1,11 +1,13 @@
+/* global $*/
+
 function changeButton() {
-  $('.favOrNot').click(function(){
+  $('.clean-btn').click(function(e){
     var url = window.location.href;
     var buttonId = $(this).data('button-id');
     setTimeout(function(){
       $('#change-favorites-' + buttonId).load(url + ' #change-favorites-' + buttonId);
       $('#change-favorites-' + buttonId).addClass('animated pulse');
-    }, 100);
+    }, 500);
   });
 }
 
