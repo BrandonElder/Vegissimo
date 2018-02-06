@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # added gems
+gem "animate-rails"
 gem 'chart-js-rails'
 gem 'devise'
 gem 'figaro'

@@ -1,12 +1,12 @@
 function removeRecipe() {
-  $('.close-button').click(function(){
+  $('.dash-close-btn').click(function(){
     var index = $(this).data('index');
-    $(".callout.alert-callout-subtle[data-index="+index+"]")
-    .addClass('animated zoomOutLeft')
+    $(".dash.callout[data-index="+index+"]")
+    .addClass('animated rollOut')
     .hide(1000);
   });
 }
-
+  
 $(function(){
   removeRecipe();
 });
