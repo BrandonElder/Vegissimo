@@ -5,12 +5,12 @@
     <%= hidden_field_tag('search_id', create_search_id) %>
     <div class="row text-centered">
       <div class="small-12 columns filters" >
-        <i class="fa fa-filter chev-filter"><span class="filter-text">filter results</span></i>
+        <i class="fa fa-filter search-filter-results"><span class="filter-results-text">filter results</span></i>
       </div>
       <!-- Filter Box Begin -->
       <div id="searchFilters">
         <div class="small-12 columns">
-          <div class='description'>Dietary Choice</div>
+          <div class='search-description'>Dietary Choice</div>
         </div>
         <!-- Radio Inputs Begin -->
         <div class="small-12 columns radio-inputs">
@@ -26,7 +26,7 @@
         <!-- Radio Inputs End -->
         <!-- Max Calories Begin -->
         <div class="small-12 columns">
-          <div class='description'>Calories Per Serving</div>
+          <div class='search-description'>Calories Per Serving</div>
         </div>
         
         <div class="row">
@@ -44,7 +44,7 @@
                                    params[:max_cal] ? params[:max_cal] : 500,
                                    min:1,
                                    required: true,
-                                   class: 'input-group-field text-input' %>
+                                   class: 'input-group-field' %>
               <div class="input-group-button">
                 <button type="button"
                         class="cal-btn"
@@ -66,7 +66,7 @@
             <%= text_field_tag "q",
               @term,
               maxlength: 50,
-              placeholder: 'search',
+              placeholder: 'avocado',
               required: true,
               class: 'text-input' %>
           </div>
