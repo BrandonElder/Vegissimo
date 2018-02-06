@@ -1,3 +1,5 @@
+/* Hero Section */
+
 .hero-section {
   position: relative;
   height: 85vh;
@@ -37,28 +39,13 @@
   margin-bottom: 40px;
 }
 
-#searchFilters {
-  display: none;
-  background: lavender;
-  opacity: 0.7;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 0.2rem;
-  
-  @media only screen and (max-width: 400px) {
-    opacity: 0.85;
-  }
-}
+/* Search Box */
 
-.chev-filter {
+.search-box {
+  text-align: center;
+  background-color: rgba(255,255,255, 0.5);
+  padding: 40px;
   color: black;
-  margin-bottom: 18px;
-}
-
-.filter-text {
-  margin-left: 6px;
-  font-weight: 600;
-  font-size: 14px;
 }
 
 .search-title {
@@ -69,91 +56,146 @@
   }
 }
 
-.search-box {
-  text-align: center;
-  background-color: rgba(255,255,255, 0.5);
-  padding: 40px;
+.search-filter-results {
+  margin-bottom: 20px;
 }
 
-.search-box .text-input {
-  &::placeholder {
-    color: rgba(0,0,0, 0.5);
-  }
-
-  &::-ms-input-placeholder {
-    color: rgba(255,255,255, 0.9);
-  }
+.filter-results-text {
+  margin-left: 6px;
+  font-size: 14px;
 }
 
-.search-box .description {
-  font-weight: 700;
+.filters {
+  margin-right: 10px;
 }
 
-.search-box .description,
-.search-box .text-input,
-.search-box .radio-label,
-.search-box .input-group-button .cal-btn
-{
-  color: black;
+.fa-filter:before {
+  content: "\f0b0";
+  font-size: 14px;
 }
+
+/* Search Input */
 
 .search-box-field {
   border-radius: 3rem;
-  margin-bottom: 30px;
+  margin: 2px 0 30px 0;
   background: rgba(0,0,0,0.2);
 }
 
-[type='radio'] + label {
-  color: #FFA274;
-  font-size: 1.2rem;
+input#q.text-input {
+  &::placeholder {
+    color: rgba(0,0,0, 0.4);
+  }
+
+  &::-ms-input-placeholder {
+    color: rgba(0,0,0, 0.4);
+  }
+}
+
+input#q.text-input, 
+input#q.text-input:focus {
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  box-shadow: none;
+  padding-left: 11px;
+  padding-bottom: 11px;
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Search Filter Box */
+
+#searchFilters {
+  display: none;
+  background: lavender;
+  opacity: 0.7;
+  padding: 20px;
+  margin-bottom: 20px;
+  
+  @media only screen and (max-width: 400px) {
+    opacity: 0.85;
+  }
+}
+
+.search-box .search-description,
+.search-box .radio-label,
+.search-box .input-group-button .cal-btn {
+  color: black;
+}
+
+.search-description {
   font-weight: 700;
-  text-transform: lowercase;
 }
 
-.landing-text {
-  font-size: 16px;
-  margin-top: 100px;
-  // margin-bottom is temporary until we have footer
-  margin-bottom: 200px;
+/* Radio Inputs */
+
+.radio-inputs {
+  min-width: 300px;
 }
 
-.landing-text h2 {
-  margin-bottom: 30px;
+input {
+  &[type=radio] {
+    opacity: 0;
+    width: 1rem;
+    margin-right: -30px;
+    position: relative;
+
+    &:checked + label:before {
+       background: #4fad9f;
+    }
+    
+    & + label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: lowercase;
+    }
+
+    & + label:before {
+      content: "\2713";
+      border-radius: 50%;
+      display: inline-block;
+      line-height: 1rem;
+      border: 0.0625rem solid #4fad9f;
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+      color: white;
+      background: white;
+    }
+  }
 }
 
-.text-box {
-  padding: 10px;
-  margin: 10px
-}
+/* Calories Input */
 
-
-/*
-* === Landing Page Cards ===
-*/
-
-.feature-box {
-  padding: 5px;
-}
-
-.feature-boxes {
+.input-group {
   display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
+  justify-content: center;
+  width: 100%;
+  margin: 0.3rem 0;
 }
 
-.feature-icon {
-  display: inline-block;
-  margin: 30px;
+#max_cal.input-group-field {
+  text-align: center;
+  flex: none;
+  width: 75px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
-#icon-1 {
-  color: #2CC3A1;
+.input-group-field::-webkit-inner-spin-button,
+.input-group-field ::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
 }
 
-#icon-2 {
-  color: #FFA274;
-}
-
-#icon-3 {
-  color: #FCEA85;
+.cal-btn:hover{
+  font-size: 1.7rem;
 }

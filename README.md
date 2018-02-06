@@ -1,24 +1,15 @@
-# README
+# Vegissimo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Vegissimo is a vegetarian recipe search engine powered by Edamam Recipe API.
 
-Things you may want to cover:
+## Tools Used:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rspec
+* Codeship
+* Rubocop
+* Devise
+* Simple Form
+* HTTParty
+* Foundation
+* Chart-js
+* Will Paginate
