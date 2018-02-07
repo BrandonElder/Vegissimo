@@ -1,3 +1,5 @@
+/* global $ */
+
 function removeRecipe() {
   $('.dash-close-btn').click(function(){
     var index = $(this).data('index');
@@ -13,9 +15,8 @@ function dislikeDisappear(){
     });
   });
 }
-  
-$(function(){
-  $.ajaxSetup({ cache: false });
+
+document.addEventListener("turbolinks:load", function() {
   removeRecipe();
   dislikeDisappear();
-});
+})
