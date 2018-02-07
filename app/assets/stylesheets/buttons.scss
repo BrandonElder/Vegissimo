@@ -13,6 +13,20 @@ button:focus {
   outline:0;
 }
 
+.social-share-button {
+  display: inline-flex;
+  padding: 0.3rem 0 0;
+  transition: all ease 0.4s;
+}
+
+.small-3.social {
+  margin-left: 20px;
+}
+
+.social-share-button .ssb-icon {
+  margin: 4px;
+}
+
 .side-close-button {
   background-color: transparent;
   text-decoration: none;

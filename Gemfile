@@ -14,6 +14,7 @@ gem 'foundation-rails'
 gem 'httparty'
 gem 'jquery-rails'
 gem 'rubocop', '~> 0.52.1', require: false
+gem 'social-share-button'
 gem 'will_paginate', '~> 3.1.1'
 
 # bundled with rails
