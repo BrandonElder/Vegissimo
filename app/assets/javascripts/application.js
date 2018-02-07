@@ -16,6 +16,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require Chart.min
+//= require social-share-button
 //= require_tree .
 
 
