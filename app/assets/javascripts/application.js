@@ -18,6 +18,7 @@
 //= require Chart.min
 //= require_tree .
 
+
 document.addEventListener("turbolinks:load", function() {
   jQuery(function(){
     $(document).foundation();
