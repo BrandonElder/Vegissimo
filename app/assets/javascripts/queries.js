@@ -7,7 +7,7 @@ function changeButton() {
     setTimeout(function(){
       $('#change-favorites-' + buttonId).load(url + ' #change-favorites-' + buttonId);
       $('#change-favorites-' + buttonId).addClass('animated pulse');
-    }, 500);
+    }, 100);
   });
 }
 
@@ -26,15 +26,6 @@ function showForm(){
    $('.form-container').show('animated slideInLeft');
    $('#get-form').addClass('animated zoomOutLeft');
  });
-}
-
-
-function dislikeDisappear(){
-  $('.dislike').click(function(){
-    $(this).parents('.callout').fadeTo( "1000" , 0.5, function() {
-      // Animation complete.
-    });
-  });
 }
 
 function footerDropDown(){
@@ -98,7 +89,6 @@ function radioLabel() {
 
 $(function(){
   $.ajaxSetup({ cache: false });
-  dislikeDisappear();
   changeButton();
   footerDropDown();
   minusPlus();
